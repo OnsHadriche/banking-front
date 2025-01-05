@@ -1,0 +1,24 @@
+<mat-toolbar background-color="accent">
+  <span>Banking App</span>
+  <span class="spacer"></span>
+  <!-- Home Button -->
+  <button mat-button routerLink="/">Home</button>
+
+  <!-- Client Menu -->
+  <button mat-button [matMenuTriggerFor]="clientMenu">Client</button>
+  <mat-menu #clientMenu="matMenu">
+    <button mat-menu-item routerLink="/clients">
+      <mat-icon>list</mat-icon>
+      <span>List Client</span>
+    </button>
+    <button mat-menu-item routerLink="/new-client">
+      <mat-icon>person_add</mat-icon>
+      <span>New Client</span>
+    </button>
+
+
+  </mat-menu>
+
+  <!-- Account Banking Button -->
+  <button mat-button routerLink="/account-banking">Account Banking</button>
+</mat-toolbar>

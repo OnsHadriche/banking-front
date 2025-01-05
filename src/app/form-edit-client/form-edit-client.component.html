@@ -1,0 +1,45 @@
+<mat-card color="primary" >
+  <mat-card-header>
+    <mat-card-title >Edit Client</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="editClientForm" (ngSubmit)="onSubmit()">
+
+      <!-- First Name Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" placeholder="First Name" required>
+      </mat-form-field>
+
+      <!-- Last Name Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" placeholder="Last Name" required>
+      </mat-form-field>
+
+      <!-- Email Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" required>
+      </mat-form-field>
+
+      <!-- Phone Number Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phoneNumber" placeholder="Phone Number" required>
+      </mat-form-field>
+
+      <!-- Address Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address" placeholder="Address" required></textarea>
+      </mat-form-field>
+
+      <!-- Button Group -->
+      <div class="button-group" style="display: flex; justify-content: center; gap: 10px;">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

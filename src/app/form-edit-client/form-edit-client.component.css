@@ -1,0 +1,19 @@
+.form-card {
+  text-align: center;
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.mat-card-title {
+  margin-bottom: 10px;
+  color: #9e2a51; /* Change this to your preferred color */
+}
+.mat-form-field-custom {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.button-full-width {
+  width: 100%;
+}

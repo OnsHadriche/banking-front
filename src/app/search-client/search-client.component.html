@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Search Client</mat-label>
+  <input matInput placeholder="Enter client name" [(ngModel)]="searchQuery">
+  <button mat-icon-button matSuffix aria-label="Search" (click)="onSearch()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+
+<div *ngIf="searchResults.length > 0">
+  <mat-list>
+    <mat-list-item *ngFor="let client of searchResults">
+      {{ client.name }}
+    </mat-list-item>
+  </mat-list>
+</div>
