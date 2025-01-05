@@ -8,6 +8,8 @@ import { AccountComponent } from './components/account/account.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FomrEditAccountComponent } from './components/fomr-edit-account/fomr-edit-account.component';
 import { FomrCreateAccountComponent } from './components/fomr-create-account/fomr-create-account.component';
+import { DetailsAccountComponent } from './components/details-account/details-account.component';
+import { AllAccountsClientComponent } from './components/all-accounts-client/all-accounts-client.component';
 
 export const routes: Routes = [
   {
@@ -37,17 +39,29 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'client-details-account/:clientId',
+    component: AllAccountsClientComponent,
+    pathMatch: 'full',
+  },
+  {
     path: 'account-banking',
     component: AccountComponent,
     pathMatch: 'full',
   },
 
   { path: 'edit-account/:accountId',
-    component: FomrEditAccountComponent },
+    component: FomrEditAccountComponent,
+    pathMatch: 'full',
+  },
 
   {
     path: 'create-account',
     component: FomrCreateAccountComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'details-account/:accountId',
+    component: DetailsAccountComponent,
     pathMatch: 'full',
   },
   {

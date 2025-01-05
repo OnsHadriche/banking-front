@@ -1,0 +1,72 @@
+<div>
+  <mat-card *ngIf="account; else errorTemplate">
+    <mat-card-header>
+      <mat-card-title >Account Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Rib:</strong> {{ account.rib }}</p>
+      <p><strong>Balance</strong> {{ account.balance }}</p>
+      <p>
+        <strong>Client</strong> {{ account.client.cin }} -
+        {{ account.client.firstName }} {{ account.client.lastName }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <ng-template #errorTemplate>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Error</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ errorMessage }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+  <mat-card *ngIf="account; else noAccountTemplate">
+    <mat-card-header>
+      <mat-card-title>Account Actions</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onDeposit()">
+        <mat-form-field>
+          <mat-label>Deposit Amount</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="depositAmount"
+            name="depositAmount"
+            placeholder="Enter deposit amount"
+            required
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Deposit</button>
+      </form>
+      <form (ngSubmit)="onWithdraw()">
+        <mat-form-field>
+          <mat-label>Withdraw Amount</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="withdrawAmount"
+            name="withdrawAmount"
+            placeholder="Enter withdraw amount"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="warn" type="submit">Withdraw</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <ng-template #noAccountTemplate>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>No Account</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>No account information available.</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+</div>
+<p-toast></p-toast>

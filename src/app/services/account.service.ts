@@ -5,11 +5,10 @@ import { catchError, Observable, throwError } from 'rxjs';
 import Account from '../models/account.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AccountService {
-
-  private apiUrl = `${environment.apiBaseUrl}/accounts`;  // Assuming your API base URL is defined in environment.ts
+  private apiUrl = `${environment.apiBaseUrl}/accounts`; // Assuming your API base URL is defined in environment.ts
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +21,10 @@ export class AccountService {
 
   // Create a new account
   createNewAccount(account: Account, clientId: number): Observable<Account> {
-    return this.http.post<Account>(`${this.apiUrl}/create-account?clientId=${clientId}`, account);
+    return this.http.post<Account>(
+      `${this.apiUrl}/create-account?clientId=${clientId}`,
+      account
+    );
   }
 
   // Get all accounts
@@ -47,23 +49,31 @@ export class AccountService {
   }
 
   // Withdraw money from an account
-  withdrawMoney(rib: number, amount: number): Observable<string> {
+  withdrawMoney(accountId: number, amount: number): Observable<any> {
     return this.http
-      .post<string>(`${this.apiUrl}/${rib}/withdraw?amount=${amount}`, {})
+      .post<any>(
+        `${this.apiUrl}/${accountId}/withdraw?amount=${amount}`,
+        null, // Body can be null for GET-like requests
+        { responseType: 'text' as 'json' }
+      )
       .pipe(catchError(this.handleError));
   }
 
   // Deposit money into an account
-  depositMoney(rib: number, amount: number): Observable<string> {
+  depositMoney(accountId: number, amount: number): Observable<any> {
     return this.http
-      .post<string>(`${this.apiUrl}/${rib}/deposit?amount=${amount}`, {})
+      .post<any>(
+        `${this.apiUrl}/${accountId}/deposit?amount=${amount}`,
+        null, // Body can be null for GET-like requests
+        { responseType: 'text' as 'json' }
+      )
       .pipe(catchError(this.handleError));
   }
 
   // Get accounts by client's CIN
-  getAccountsByClientCin(clientCin: number): Observable<Account[]> {
+  getAccountsByClientCin(clientCin: any): Observable<any[]> {
     return this.http
-      .get<Account[]>(`${this.apiUrl}/client/${clientCin}`)
+      .get<any[]>(`${this.apiUrl}/client/${clientCin}`)
       .pipe(catchError(this.handleError));
   }
 

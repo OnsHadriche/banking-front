@@ -89,6 +89,6 @@ export class AccountComponent {
 
   detailsAccount(id: number): void {
     console.log(`Details of client with ID: ${id}`);
-    this.router.navigate(['/account-details/', id]); // Navigates to client-details route with clientId
+    this.router.navigate(['/details-account/', id]); // Navigates to client-details route with clientId
   }
 }

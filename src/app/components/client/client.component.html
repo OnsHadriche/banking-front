@@ -35,6 +35,12 @@
         <button mat-button (click)="detailsClient(client.cin)">details</button>
       </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="accounts">
+      <mat-header-cell *matHeaderCellDef> Accounts </mat-header-cell>
+      <mat-cell *matCellDef="let client">
+        <button mat-button (click)="getAllClientAccounts(client.cin)">display</button>
+      </mat-cell>
+    </ng-container>
 
     <!-- Delete Column -->
     <ng-container matColumnDef="delete">

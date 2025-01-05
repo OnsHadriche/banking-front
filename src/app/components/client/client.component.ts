@@ -9,7 +9,7 @@ import { MatButton } from '@angular/material/button';
 
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-import { SearchClientComponent } from "../search-client/search-client.component";
+import { SearchClientComponent } from '../search-client/search-client.component';
 
 @Component({
   selector: 'app-client',
@@ -19,8 +19,8 @@ import { SearchClientComponent } from "../search-client/search-client.component"
     MatDialogModule,
     MatButton,
     MatInputModule,
-    SearchClientComponent
-],
+    SearchClientComponent,
+  ],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css',
 })
@@ -50,6 +50,7 @@ export class ClientComponent implements OnInit {
     'firstname',
     'lastname',
     'details',
+    "accounts",
     'edit',
     'delete',
   ];
@@ -82,11 +83,15 @@ export class ClientComponent implements OnInit {
   }
   editClient(clientId: number): void {
     console.log(`Editing client with ID: ${clientId}`);
-    this.router.navigate(['/edit-client/', clientId]);  // Navigates to form-edit route with clientId
+    this.router.navigate(['/edit-client/', clientId]); // Navigates to form-edit route with clientId
   }
 
   detailsClient(clientId: number): void {
     console.log(`Details of client with ID: ${clientId}`);
-    this.router.navigate(['/client-details/', clientId]);  // Navigates to client-details route with clientId
+    this.router.navigate(['/client-details/', clientId]); // Navigates to client-details route with clientId
+  }
+  getAllClientAccounts(clientId: number): void {
+    console.log(`Details of client with ID: ${clientId}`);
+    this.router.navigate(['/client-details-account/', clientId]);
   }
 }

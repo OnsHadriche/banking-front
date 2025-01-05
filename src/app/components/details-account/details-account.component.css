@@ -1,0 +1,82 @@
+/* Centering the mat-card */
+div {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This will make sure the card is vertically centered */
+  padding: 20px;
+}
+
+/* General card styling */
+mat-card {
+  width: 100%;
+  max-width: 600px; /* Restrict the card width for better design */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+/* Title Styling */
+mat-card-header {
+  background-color: #74084a;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  color: #071436; /* Change the title color */
+}
+
+/* Account Details Styling */
+mat-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+mat-card p strong {
+  color: #2e0624;
+}
+
+/* Error Handling Styling */
+mat-card mat-card-header {
+  background-color: #e4d1df;
+}
+
+mat-card p {
+  color: #250e3b;
+  font-size: 1rem;
+}
+mat-input-container {
+width: 50%;
+ margin-top: 5px;
+}
+mat-form-field {
+  margin-top: 12px;
+  width:100%;
+  margin-bottom: 5px; /* Space between form fields */
+}
+
+/* Styling the input (matInput) */
+input[matInput] {
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: none; /* Remove default box shadow */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+button[mat-raised-button] {
+  padding: 12px 20px;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}

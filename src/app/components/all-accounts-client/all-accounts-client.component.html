@@ -1,0 +1,29 @@
+<div class="tab-container">
+  <div></div>
+  <h2>Lists des accounts</h2>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="rib">
+      <mat-header-cell *matHeaderCellDef> RIB </mat-header-cell>
+      <mat-cell *matCellDef="let account"> {{ account.rib }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="balance">
+      <mat-header-cell *matHeaderCellDef> Balance </mat-header-cell>
+      <mat-cell *matCellDef="let account"> {{ account.balance }} </mat-cell>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="cin">
+      <mat-header-cell *matHeaderCellDef> CIN Client </mat-header-cell>
+      <mat-cell *matCellDef="let account"> {{ account.client.cin }} </mat-cell>
+    </ng-container>
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>
