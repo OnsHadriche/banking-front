@@ -7,8 +7,9 @@
 }
 
 .mat-card-title {
-  margin-bottom: 10px;
-  color: #9e2a51; /* Change this to your preferred color */
+  margin-bottom: 20px;
+  color: #9e2a51; /* Adjust to your preferred color */
+  font-size: 1.5em;
 }
 .mat-form-field-custom {
   width: 100%;
@@ -16,10 +17,5 @@
 }
 .button-full-width {
   width: 100%;
-}
-/* client-search.component.css */
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin-top: 10px;
 }

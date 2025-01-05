@@ -26,7 +26,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'edit-client/:id',
+    path: 'edit-client/:clientId',
     component: FormEditClientComponent,
     pathMatch: 'full',
   },

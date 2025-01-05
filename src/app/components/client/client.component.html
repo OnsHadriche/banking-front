@@ -1,39 +1,44 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="tab-container">
+  <h2>Lists des clients</h2>
 
-  <!-- ID Column -->
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef> CIN </mat-header-cell>
-    <mat-cell *matCellDef="let client"> {{client.cin}} </mat-cell>
-  </ng-container>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> CIN </mat-header-cell>
+      <mat-cell *matCellDef="let client"> {{ client.cin }} </mat-cell>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="firstname">
-    <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-    <mat-cell *matCellDef="let client"> {{client.firstName}} </mat-cell>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstname">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let client"> {{ client.firstName }} </mat-cell>
+    </ng-container>
 
-  <!-- Last Name Column -->
-  <ng-container matColumnDef="lastname">
-    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-    <mat-cell *matCellDef="let client"> {{client.lastName}} </mat-cell>
-  </ng-container>
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastname">
+      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let client"> {{ client.lastName }} </mat-cell>
+    </ng-container>
 
-  <!-- Edit Column -->
-  <ng-container matColumnDef="edit">
-    <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
-    <mat-cell *matCellDef="let client">
-      <button mat-button (click)="editClient(client.cin)">Edit</button>
-    </mat-cell>
-  </ng-container>
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+      <mat-cell *matCellDef="let client">
+        <button mat-button (click)="editClient(client.cin)">Edit</button>
+      </mat-cell>
+    </ng-container>
 
-  <!-- Delete Column -->
-  <ng-container matColumnDef="delete">
-    <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
-    <mat-cell *matCellDef="let client">
-      <button mat-button (click)="openDeleteClientModal(client.cin)">Delete</button>
-    </mat-cell>
-  </ng-container>
+    <!-- Delete Column -->
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+      <mat-cell *matCellDef="let client">
+        <button mat-button (click)="openDeleteClientModal(client.cin)">
+          Delete
+        </button>
+      </mat-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table >
+</div>
