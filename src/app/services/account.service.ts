@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
+import { catchError, Observable, throwError } from 'rxjs';
+import Account from '../models/account.model';
 
 @Injectable({
   providedIn: 'root'
@@ -68,7 +70,7 @@ export class AccountService {
   }
 
   // Error handling
-  private handleError(error: HttpErrorResponse) {
+  private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Client-side error

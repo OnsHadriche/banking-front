@@ -6,7 +6,6 @@ export default class Account {
   constructor(
     rib: number,
     balance: number,
-    creationDate: Date,
     clientId: number
   ) {
     this.rib = rib;
