@@ -1,13 +1,13 @@
 export default class Client {
   cin: number;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
 
 
-  constructor(cin: number, firstname: string, lastname: string) {
+  constructor(cin: number, firstName: string, lastName: string) {
     this.cin = cin;
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.firstName = firstName;
+    this.lastName = lastName;
 
   }
 }

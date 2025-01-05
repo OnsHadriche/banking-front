@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
+import { catchError } from 'rxjs/operators';
 import Client from '../models/client.model';
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
+
+  private handleError(error: any): Observable<never> {
+    console.error('An error occurred:', error);
+    return throwError('Something bad happened; please try again later.');
+  }
 
 private apiUrl = `${environment.apiBaseUrl}/clients`; // Make sure to replace with actual API URL
 
@@ -39,8 +45,9 @@ private apiUrl = `${environment.apiBaseUrl}/clients`; // Make sure to replace wi
 
   // Get client by first and last name
   getClientByName(firstName: string, lastName: string): Observable<Client> {
-    return this.http.get<Client>(`${this.apiUrl}/search`, {
-      params: { firstName, lastName }
-    });
+    const url = `${this.apiUrl}?firstName=${firstName}&lastName=${lastName}`;
+    return this.http.get<Client>(url).pipe(
+      catchError(this.handleError)
+    );
   }
 }

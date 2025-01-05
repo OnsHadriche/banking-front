@@ -1,4 +1,6 @@
 <div class="tab-container">
+  <app-search-client />
+  <div></div>
   <h2>Lists des clients</h2>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -27,6 +29,12 @@
         <button mat-button (click)="editClient(client.cin)">Edit</button>
       </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef> Details </mat-header-cell>
+      <mat-cell *matCellDef="let client">
+        <button mat-button (click)="detailsClient(client.cin)">details</button>
+      </mat-cell>
+    </ng-container>
 
     <!-- Delete Column -->
     <ng-container matColumnDef="delete">
@@ -40,5 +48,5 @@
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-  </table >
+  </table>
 </div>

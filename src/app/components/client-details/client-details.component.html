@@ -1,1 +1,21 @@
-<p>client-details works!</p>
+<mat-card *ngIf="client; else errorTemplate">
+  <mat-card-header>
+    <mat-card-title>Client Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>First Name:</strong> {{ client.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ client.lastName }}</p>
+    <p><strong>CIN:</strong> {{ client.cin }}</p>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #errorTemplate>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Error</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ errorMessage }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

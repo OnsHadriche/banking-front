@@ -1,4 +1,5 @@
-<mat-form-field class="example-full-width">
+<p-toast></p-toast>
+<mat-form-field class="example-full-width" >
   <mat-label>Search Client</mat-label>
   <input matInput placeholder="Enter client name" [(ngModel)]="searchQuery">
   <button mat-icon-button matSuffix aria-label="Search" (click)="onSearch()">
@@ -8,8 +9,12 @@
 
 <div *ngIf="searchResults.length > 0">
   <mat-list>
-    <mat-list-item *ngFor="let client of searchResults">
-      {{ client.name }}
-    </mat-list-item>
+    {{ searchResults.length }} results found
+    <div>
+
+    </div>
+    {{searchQuery}}
+    <div></div>
+    <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
   </mat-list>
 </div>

@@ -31,7 +31,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'client-details/:id',
+    path: 'client-details/:clientId',
     component: ClientDetailsComponent,
     pathMatch: 'full',
   },
