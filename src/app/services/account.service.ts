@@ -33,7 +33,7 @@ export class AccountService {
   }
 
   // Update account by RIB
-  updateAccount(rib: number, account: Account): Observable<Account> {
+  updateAccount(rib: number, account: any): Observable<Account> {
     return this.http
       .put<Account>(`${this.apiUrl}/update/${rib}`, account)
       .pipe(catchError(this.handleError));

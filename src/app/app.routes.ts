@@ -9,7 +9,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FomrEditAccountComponent } from './components/fomr-edit-account/fomr-edit-account.component';
 import { FomrCreateAccountComponent } from './components/fomr-create-account/fomr-create-account.component';
 
-
 export const routes: Routes = [
   {
     path: '', // Fixed: removed trailing space
@@ -42,11 +41,10 @@ export const routes: Routes = [
     component: AccountComponent,
     pathMatch: 'full',
   },
-  {
-    path: 'edit-account/:rib',
-    component: FomrEditAccountComponent,
-    pathMatch: 'full',
-  },
+
+  { path: 'edit-account/:accountId',
+    component: FomrEditAccountComponent },
+
   {
     path: 'create-account',
     component: FomrCreateAccountComponent,

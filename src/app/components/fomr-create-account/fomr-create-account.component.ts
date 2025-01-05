@@ -11,7 +11,7 @@ import { AccountService } from '../../services/account.service';
 import { ClientService } from '../../services/client.service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import Account from '../../models/account.model';
+
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';

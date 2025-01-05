@@ -3,7 +3,7 @@ import Account from '../../models/account.model';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AccountService } from '../../services/account.service';
 import { Router } from '@angular/router';
-import { DeleteAccountComponent } from '../delete-account/delete-account.component';
+import { DeleteAccountComponent } from '../../delete-account/delete-account.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
@@ -19,7 +19,7 @@ import { SearchAccountComponent } from '../../search-account/search-account.comp
     MatDialogModule,
     MatButton,
     MatInputModule,
-    SearchAccountComponent,
+
   ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css',
