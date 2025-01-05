@@ -1,0 +1,30 @@
+<mat-card color="primary" class="form-card">
+  <mat-card-title>Create Client</mat-card-title>
+
+  <mat-card-content>
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <!-- CIN Input -->
+      <mat-form-field appearance="fill" class="mat-form-field-custom">
+        <mat-label>CIN</mat-label>
+        <input matInput formControlName="cin" placeholder="Enter CIN" required>
+      </mat-form-field>
+
+      <!-- First Name Input -->
+      <mat-form-field appearance="fill" class="mat-form-field-custom">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" placeholder="Enter first name" required>
+      </mat-form-field>
+
+      <!-- Last Name Input -->
+      <mat-form-field appearance="fill" class="mat-form-field-custom">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" placeholder="Enter last name" required>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit" class="button-full-width">
+        Create
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

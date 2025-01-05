@@ -17,3 +17,9 @@
 .button-full-width {
   width: 100%;
 }
+/* client-search.component.css */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

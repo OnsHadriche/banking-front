@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./navbar/navbar.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DeleteClientComponent } from './components/delete-client/delete-client.component';
+
 
 @Component({
   selector: 'app-root',
