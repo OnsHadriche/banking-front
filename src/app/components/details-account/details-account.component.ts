@@ -127,10 +127,10 @@ export class DetailsAccountComponent {
     const accountId = this.route.snapshot.paramMap.get('accountId'); // Make sure the parameter name matches
     if (accountId) {
       const accountIdNumber: number = +accountId;
-      this.account.balance -= this.withdrawAmount;
+      //this.account.balance -= this.withdrawAmount;
 
       this.accountService
-        .withdrawMoney(accountIdNumber, this.account.balance)
+        .withdrawMoney(accountIdNumber, this.withdrawAmount)
         .subscribe(
           () => {
             this.messageService.add({

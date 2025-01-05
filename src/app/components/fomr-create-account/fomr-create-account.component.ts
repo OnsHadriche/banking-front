@@ -92,7 +92,7 @@ export class FomrCreateAccountComponent {
           alert('Account created successfully!');
           this.accountForm.reset();
 
-          window.location.href = '/accounts';
+          window.location.href = '/account-banking';
         },
         (error) => {
           console.error('Error creating account:', error);

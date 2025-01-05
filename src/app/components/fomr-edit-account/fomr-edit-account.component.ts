@@ -101,7 +101,7 @@ export class FomrEditAccountComponent {
                 detail: 'Account updated successfully!',
               });
               this.accounteditForm.reset();
-              window.location.href = '/accounts'; // Redirect to the accounts list
+              window.location.href = '/accounts-banking'; // Redirect to the accounts list
             },
             (error) => {
               console.error('Error updating account:', error);
