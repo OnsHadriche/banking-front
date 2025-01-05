@@ -18,7 +18,18 @@
 
 
   </mat-menu>
+  <!-- Client Menu -->
+  <button mat-button [matMenuTriggerFor]="accountMenu">Account Banking</button>
+  <mat-menu #accountMenu="matMenu">
+    <button mat-menu-item routerLink="/account-banking">
+      <mat-icon>list</mat-icon>
+      <span>List accounts</span>
+    </button>
+    <button mat-menu-item routerLink="/create-account">
+      <mat-icon>account_circle</mat-icon>
+      <span>New account</span>
+    </button>
 
-  <!-- Account Banking Button -->
-  <button mat-button routerLink="/account-banking">Account Banking</button>
+
+  </mat-menu>
 </mat-toolbar>

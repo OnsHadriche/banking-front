@@ -22,9 +22,7 @@ export class AccountService {
 
   // Create a new account
   createNewAccount(account: Account, clientId: number): Observable<Account> {
-    return this.http
-      .post<Account>(`${this.apiUrl}/create-account?clientId=${clientId}`, account)
-      .pipe(catchError(this.handleError));
+    return this.http.post<Account>(`${this.apiUrl}/create-account?clientId=${clientId}`, account);
   }
 
   // Get all accounts

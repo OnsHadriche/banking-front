@@ -6,6 +6,8 @@ import { FormEditClientComponent } from './components/form-edit-client/form-edit
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { AccountComponent } from './components/account/account.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FomrEditAccountComponent } from './components/fomr-edit-account/fomr-edit-account.component';
+import { FomrCreateAccountComponent } from './components/fomr-create-account/fomr-create-account.component';
 
 
 export const routes: Routes = [
@@ -38,6 +40,16 @@ export const routes: Routes = [
   {
     path: 'account-banking',
     component: AccountComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'edit-account/:rib',
+    component: FomrEditAccountComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'create-account',
+    component: FomrCreateAccountComponent,
     pathMatch: 'full',
   },
   {

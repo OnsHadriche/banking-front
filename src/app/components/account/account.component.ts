@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SearchClientComponent } from '../search-client/search-client.component';
-import { SearchAccountComponent } from "../../search-account/search-account.component";
+import { SearchAccountComponent } from '../../search-account/search-account.component';
 
 @Component({
   selector: 'app-account',
@@ -19,8 +19,8 @@ import { SearchAccountComponent } from "../../search-account/search-account.comp
     MatDialogModule,
     MatButton,
     MatInputModule,
-    SearchAccountComponent
-],
+    SearchAccountComponent,
+  ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css',
 })
@@ -36,8 +36,8 @@ export class AccountComponent {
   ngOnInit(): void {
     this.acccoutService.getAllAccounts().subscribe(
       (data) => {
+        console.log(data);
         this.dataSource = data;
-        console.log(this.dataSource);
       },
       (error) => {
         console.error('There was an error retrieving the clients!', error);
@@ -48,8 +48,9 @@ export class AccountComponent {
   displayedColumns: string[] = [
     'rib',
     'balance',
-    'lastname',
-    'client_id',
+
+    'name',
+    'cin',
     'edit',
     'delete',
     'details',
